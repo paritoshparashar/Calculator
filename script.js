@@ -1,6 +1,6 @@
 const numbers = document.getElementById('numbers');
-// let parentWidthtNumbers = numbers.offsetWidth;
-// let parentHeightNumbers = numbers.offsetHeight;
+let parentWidthtNumbers = numbers.offsetWidth;
+let parentHeightNumbers = numbers.offsetHeight;
 
 for (let i = 0; i < 16 ; i++) {
       
