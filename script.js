@@ -18,6 +18,8 @@ for (let i = 1; i < 20 ; i++) {
     number.style.alignItems = "center";
     number.style.fontSize = "25px";
     number.style.fontWeight = "bold";
+    number.style.fontFamily = "'Courier New', Courier, monospace";
+    number.style.boxShadow = "5px 5px 7px rgba(0, 0, 0, 0.57)"
 
     if (i >=5 && i<=17 ) {
         if (i%4 != 0) {     
@@ -32,6 +34,27 @@ for (let i = 1; i < 20 ; i++) {
         number.style.borderRadius = "40px";
         number.textContent = "=";
         number.style.fontSize = "50px";
+    }
+    if (i == 1) {
+        number.textContent = "AC"
+    }
+    if (i == 2) {
+        number.textContent = "C"
+    }
+    if (i == 3) {
+        number.textContent = "%"
+    }
+    if (i == 4) {
+        number.textContent = "/"
+    }
+    if (i == 8) {
+        number.textContent = "x"
+    }
+    if (i == 12) {
+        number.textContent = "-"
+    }
+    if (i == 16) {
+        number.textContent = "+"
     }
 
     numbers.appendChild(number);
@@ -52,7 +75,7 @@ function operate (op, first, second){
     else if (op === '/') {
         return divide(first, second);
     }
-    else if (op === '*') {
+    else if (op === 'x') {
         return multiply(first, second);
     }
     else if (op === '%') {
