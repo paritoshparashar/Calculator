@@ -5,7 +5,7 @@ let parentHeightNumbers = numbers.offsetHeight;
 let j = 9;
 for (let i = 1; i < 20 ; i++) {
     
-    let number = document.createElement('div');
+    let number = document.createElement('button');
     number.className = ''+(i);
     number.style.width = (parentWidthtNumbers-30)/4 + 'px';
     number.style.height =( parentWidthtNumbers-30)/4 + 'px';
