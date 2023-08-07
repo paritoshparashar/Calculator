@@ -1,7 +1,7 @@
 html{
     height:100vh;
     margin: 0;
-    background: black;
+    background: rgb(70, 70, 70);
 }
 
 body {
@@ -28,7 +28,7 @@ header{
     height: 565px;
     background: #FCB31B;
     border-radius: 20px;
-    box-shadow: 15px 15px 7px rgba(70, 70, 70, 0.37);
+    box-shadow: 15px 15px 7px rgba(0, 0, 0, 0.37);
     padding: 20px;
     box-sizing: border-box;
     display: flex;
