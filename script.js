@@ -1,3 +1,4 @@
+//Below is the implementation of 
 const numbers = document.getElementById('numbers');
 let parentWidthtNumbers = numbers.offsetWidth;
 let parentHeightNumbers = numbers.offsetHeight;
@@ -17,6 +18,30 @@ for (let i = 0; i < 19 ; i++) {
     }
     numbers.appendChild(number);
 }
+//Implementing Calculator From here
+
+var leftNum;
+var rightNum;
+var operator;
+
+function operate (op, first, second){
+    if (op === '+') {
+        return sum(first , second);
+    }
+    else if (op === '-') {
+        return subtract(first, second);
+    }
+    else if (op === '/') {
+        return divide(first, second);
+    }
+    else if (op === '*') {
+        return multiply(first, second);
+    }
+    else if (op === '%') {
+        return mod(first, second);
+    }
+
+}
 
 function sum (a, b){
     return a+b;
@@ -33,3 +58,4 @@ function divide (a, b){
 function mod (a, b){
     return a % b;
 }
+
