@@ -22,8 +22,50 @@ header{
 .center{
     height: 70%;
     aspect-ratio: 1.5/2;
-    background: grey;
-    border-radius: 5%;
+    background: rgb(0, 47, 61);
+    border-radius: 20px;
+    box-shadow: 15px 15px 7px rgba(70, 70, 70, 0.37);
+    padding: 25px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.display{
+    height: 20%;
+    background: rgba(119, 252, 219, 0.493);
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.erase{
+    display: flex;
+    height: 15%;
+    gap: 20px;
+}
+
+.back{
+    width: 50%;
+    background: rgba(88, 88, 88, 0.61);
+    border-radius: 10px;
+    box-sizing: border-box;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.erase p{
+    font-size: 20px;
+    font-family: 'Courier New', Courier, monospace;
+    color: white;
+}
+
+.numbers{
+    background: rgb(177, 177, 177);
+    flex: 1;
+    margin-top: 20px;
+    border-radius: 10px;
 }
 
 footer {
