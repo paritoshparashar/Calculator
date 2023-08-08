@@ -104,7 +104,7 @@ function mod (a, b){
 //Below is the implementation to populate the display when the buttons are pressed
 
 const display = document.querySelector('.display');
-display.textContent = "1002334720935";
+display.textContent = "935";
 display.style.padding = "10px"
 display.style.color = "darkgreen";
 display.style.display = "flex";
