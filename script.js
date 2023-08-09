@@ -20,6 +20,7 @@ for (let i = 1; i < 20 ; i++) {
     number.style.fontWeight = "bold";
     number.style.fontFamily = "'Courier New', Courier, monospace";
     number.style.boxShadow = "5px 5px 7px rgba(0, 0, 0, 0.57)"
+    number.addEventListener('click', dispPop);
 
     if (i >=5 && i<=17 ) {
         if (i%4 != 0) {     
@@ -35,26 +36,29 @@ for (let i = 1; i < 20 ; i++) {
         number.textContent = "=";
         number.style.fontSize = "50px";
     }
-    if (i == 1) {
+    else if (i == 1) {
         number.textContent = "AC"
     }
-    if (i == 2) {
+    else if (i == 2) {
         number.textContent = "C"
     }
-    if (i == 3) {
+    else if (i == 3) {
         number.textContent = "%"
     }
-    if (i == 4) {
+    else if (i == 4) {
         number.textContent = "/"
     }
-    if (i == 8) {
+    else if (i == 8) {
         number.textContent = "x"
     }
-    if (i == 12) {
+    else if (i == 12) {
         number.textContent = "-"
     }
-    if (i == 16) {
+    else if (i == 16) {
         number.textContent = "+"
+    }
+    else if (i == 18) {
+        number.textContent = "."
     }
 
     numbers.appendChild(number);
@@ -81,7 +85,7 @@ function operate (op, first, second){
     else if (op === '%') {
         return mod(first, second);
     }
-
+    
 }
 
 function sum (a, b){
@@ -104,7 +108,7 @@ function mod (a, b){
 //Below is the implementation to populate the display when the buttons are pressed
 
 const display = document.querySelector('.display');
-display.textContent = "5635";
+display.textContent = "0";
 display.style.padding = "10px"
 display.style.color = "darkgreen";
 display.style.display = "flex";
@@ -113,4 +117,8 @@ display.style.alignItems = "end";
 display.style.fontSize = "30px";
 display.style.fontFamily = "'Courier New', Courier, monospace";
 display.style.fontWeight = "bold";
+
+function dispPop () {
+    display.textContent = this.textContent;
+}
 
