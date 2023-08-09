@@ -111,3 +111,6 @@ display.style.display = "flex";
 display.style.justifyContent = "end";
 display.style.alignItems = "end";
 display.style.fontSize = "30px";
+display.style.fontFamily = "'Courier New', Courier, monospace";
+display.style.fontWeight = "bold";
+
