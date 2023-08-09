@@ -20,11 +20,12 @@ for (let i = 1; i < 20 ; i++) {
     number.style.fontWeight = "bold";
     number.style.fontFamily = "'Courier New', Courier, monospace";
     number.style.boxShadow = "5px 5px 7px rgba(0, 0, 0, 0.57)"
-    number.addEventListener('click', dispPop);
+    
 
     if (i >=5 && i<=17 ) {
         if (i%4 != 0) {     
         number.textContent = ''+ j;
+        number.addEventListener('click', dispPopNum);
         --j;
         }
         
@@ -118,7 +119,7 @@ display.style.fontSize = "30px";
 display.style.fontFamily = "'Courier New', Courier, monospace";
 display.style.fontWeight = "bold";
 
-function dispPop () {
-    display.textContent = this.textContent;
+function dispPopNum () {
+    display.textContent = (parseInt(display.textContent) * 10) + parseInt(this.textContent);
 }
 
