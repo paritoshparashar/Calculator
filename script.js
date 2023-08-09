@@ -3,6 +3,7 @@ const numbers = document.getElementById('numbers');
 let parentWidthtNumbers = numbers.offsetWidth;
 let parentHeightNumbers = numbers.offsetHeight;
 let j = 9;
+
 for (let i = 1; i < 20 ; i++) {
     
     let number = document.createElement('button');
@@ -22,51 +23,55 @@ for (let i = 1; i < 20 ; i++) {
     number.style.boxShadow = "5px 5px 7px rgba(0, 0, 0, 0.57)"
     
 
-    if (i >=5 && i<=17 ) {
+    if (i >=4 && i<=17 ) {
+
         if (i%4 != 0) {     
         number.textContent = ''+ j;
         number.addEventListener('click', dispPopNum);
         --j;
         }
-        
+        else if (i == 4) {
+        number.textContent = "/";
+        }
+        else if (i == 8) {
+            number.textContent = "x";
+        }
+        else if (i == 12) {
+            number.textContent = "-";
+        }
+        else if (i == 16) {
+            number.textContent = "+";
+        }
     }
 
-    if (i == 19) {
+    else if (i == 19) {
         number.style.flexGrow = "0.8";
         number.style.borderRadius = "40px";
         number.textContent = "=";
         number.style.fontSize = "50px";
     }
     else if (i == 1) {
-        number.textContent = "AC"
+        number.textContent = "AC";
+        number.addEventListener('click', ()=> display.textContent = "0")
     }
     else if (i == 2) {
-        number.textContent = "C"
+        number.textContent = "C";
     }
     else if (i == 3) {
-        number.textContent = "%"
+        number.textContent = "%";
     }
-    else if (i == 4) {
-        number.textContent = "/"
-    }
-    else if (i == 8) {
-        number.textContent = "x"
-    }
-    else if (i == 12) {
-        number.textContent = "-"
-    }
-    else if (i == 16) {
-        number.textContent = "+"
-    }
+    
     else if (i == 18) {
-        number.textContent = "."
+        number.textContent = ".";
+        number.addEventListener('click', dispPopNum);
+
     }
 
     numbers.appendChild(number);
 }
 //Implementing Calculator From here
 
-var leftNum;
+let leftNum = 0;
 var rightNum;
 var operator;
 
@@ -109,7 +114,7 @@ function mod (a, b){
 //Below is the implementation to populate the display when the buttons are pressed
 
 const display = document.querySelector('.display');
-display.textContent = "10";
+display.textContent = "";
 display.style.padding = "10px"
 display.style.color = "darkgreen";
 display.style.display = "flex";
@@ -120,6 +125,6 @@ display.style.fontFamily = "'Courier New', Courier, monospace";
 display.style.fontWeight = "bold";
 
 function dispPopNum () {
-    display.textContent = (parseInt(display.textContent) * 10) + parseInt(this.textContent);
+    display.textContent += this.textContent ;
 }
 
