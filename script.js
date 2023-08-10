@@ -51,6 +51,7 @@ for (let i = 1; i < 20 ; i++) {
         number.style.borderRadius = "40px";
         number.textContent = "=";
         number.style.fontSize = "50px";
+        number.addEventListener('click' , dispPopNum);
     }
     else if (i == 1) {
         number.textContent = "AC";
@@ -122,6 +123,9 @@ const upDisplay = document.querySelector('.upDisplay');
 upDisplay.textContent = "0";
 let text = 0;
 let previousInput = undefined;
+
+
+
 function dispPopNum () {
     
     
@@ -167,40 +171,25 @@ function dispPopNum () {
     }
     if ((rightNum == 0)) {
 
-        if ((input != "x") && (input != "+") && (input != "/")) {
+        if ((input != "x") && (input != "+") && (input != "/") && (input != "=")) {
             upDisplay.textContent += input ;
             text = (text *  10) + parseFloat(input);
         }
-        else if ((input == "x") || (input == "+") || (input == "/")){ //  ((input == "-" ) && (text >0) ) || --the rest
+        else if ((input == "x") || (input == "+") || (input == "/") || (input == "=")){ //  ((input == "-" ) && (text >0) ) || --the rest
             rightNum = parseFloat(text);
             result = operate(operator, leftNum, rightNum);
             dispResult(result);
             leftNum = result;
             operator = input;
             rightNum = 0;
-            upDisplay.textContent += input; 
+            if (input != "=") {
+                upDisplay.textContent += input;
+            }
+            
             text = "0"
         }
 
     }
-
-   
-
-
-    // else {
-    //     if ((input == "x") || (input == "+") || (input == "/") || (input == "-")){
-    //         leftNum = parseFloat(text);
-    //         operator = input;
-    //         upDisplay.textContent += input; 
-    //         text = "0"
-    //     }
-    //     else{
-    //         upDisplay.textContent += input; 
-    //     }
-            
-    // }
-
-
    
 }
  function clear (){
@@ -215,7 +204,7 @@ function dispPopNum () {
 
 const downDisplay = document.querySelector('.downDisplay');
 
-function dispResult(result){
+function dispResult(){
 
     downDisplay.textContent = '' + result;
 
