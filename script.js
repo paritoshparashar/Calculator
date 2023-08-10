@@ -134,7 +134,7 @@ function dispPopNum () {
     
     let input = this.textContent;
 
-    if ((input == "x") || (input == "+") || (input == "/") || (previousInput == "-")) {
+    if ((input == "x") || (input == "+") || (input == "/") || (input =="=") || (input == "AC") || (previousInput == "-")) {
 
         if (previousInput == input) {
             return;
@@ -158,7 +158,7 @@ function dispPopNum () {
 
     if ((leftNum == 0)) {
 
-        if (((input != "x") && (input != "+") && (input != "/") && (input != "-")) || ( (input == "-") && (text == 0))) {
+        if (((input != "x") && (input != "+") && (input != "/") && (input != "-") ) || ( (input == "-") && (text == 0))) {
 
             if (input == "-" && text == 0)  {
                 sign = -1;
@@ -220,7 +220,7 @@ function dispPopNum () {
 const downDisplay = document.querySelector('.downDisplay');
 
 function dispResult(){
-
+    text = "" + result;
     downDisplay.textContent = '' + result;
 
    } 
