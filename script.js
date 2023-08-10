@@ -173,7 +173,8 @@ function dispPopNum () {
         }
         else if ((input == "x") || (input == "+") || (input == "/")){ //  ((input == "-" ) && (text >0) ) || --the rest
             rightNum = parseFloat(text);
-            result = operate(operator, leftNum, rightNum)
+            result = operate(operator, leftNum, rightNum);
+            dispResult(result);
             leftNum = result;
             operator = input;
             rightNum = 0;
@@ -211,6 +212,14 @@ function dispPopNum () {
         upDisplay.textContent = "0"
     }
 
-// let upDisplay = document.querySelector('.downDisplay');
+
+const downDisplay = document.querySelector('.downDisplay');
+
+function dispResult(result){
+
+    downDisplay.textContent = '' + result;
+
+   } 
+
 
 

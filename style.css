@@ -48,9 +48,10 @@ header{
 }
 
 .upDisplay{
-    height:35px;
+    height:60px;
     background: rgb(27, 27, 27);
     border-radius: 10px;
+    box-sizing: border-box;
     padding : 10px;
     color : darkgreen;
     display : flex;
@@ -63,8 +64,17 @@ header{
 
 .downDisplay{
     height: 35px;
+    box-sizing: border-box;
     background: rgb(27, 27, 27);
     border-radius: 10px;
+    padding: 0px 10px 5px 10px;
+    color : darkgreen;
+    display : flex;
+    justify-content : end;
+    align-items : end;
+    font-size : 22px;
+    font-family : 'Courier New', Courier, monospace;
+    font-weight : bold;
 }
 
 .erase{
