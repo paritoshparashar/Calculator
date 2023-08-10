@@ -25,9 +25,11 @@ for (let i = 1; i < 20 ; i++) {
 
     if (i >=4 && i<=17 ) {
 
+        number.addEventListener('click', dispPopNum);
+
         if (i%4 != 0) {     
         number.textContent = ''+ j;
-        number.addEventListener('click', dispPopNum);
+        
         --j;
         }
         else if (i == 4) {
@@ -52,7 +54,7 @@ for (let i = 1; i < 20 ; i++) {
     }
     else if (i == 1) {
         number.textContent = "AC";
-        number.addEventListener('click', ()=> display.textContent = "0")
+        number.addEventListener('click', ()=> upDisplay.textContent = "0")
     }
     else if (i == 2) {
         number.textContent = "C";
@@ -69,10 +71,13 @@ for (let i = 1; i < 20 ; i++) {
 
     numbers.appendChild(number);
 }
+
+
 //Implementing Calculator From here
 
 let leftNum = 0;
-var rightNum;
+let rightNum = 1;
+let result = 0;
 var operator;
 
 function operate (op, first, second){
@@ -114,10 +119,86 @@ function mod (a, b){
 //Below is the implementation to populate the display when the buttons are pressed
 
 const upDisplay = document.querySelector('.upDisplay');
-upDisplay.textContent = "";
-
+upDisplay.textContent = "0";
+let text = 0;
+let previousInput = undefined;
 function dispPopNum () {
-    upDisplay.textContent += this.textContent ;
+    
+    
+    let input = this.textContent;
+
+    if ((input == "x") || (input == "+") || (input == "/")) {
+
+        if (previousInput == input) {
+            return;
+        }
+
+    }
+    previousInput = input;
+
+    if (upDisplay.textContent == "0") {
+        if (input == '.') {
+            upDisplay.textContent = "0.";
+            return;
+        }
+        else{
+            upDisplay.textContent = "";
+        }
+        
+    }
+
+
+    if ((leftNum == 0)) {
+
+        if ((input != "x") && (input != "+") && (input != "/")) {
+            upDisplay.textContent += input ;
+            text = (text *  10) + parseFloat(input);
+            return;
+        }
+        else if ((input == "x") || (input == "+") || (input == "/")){ //  ((input == "-" ) && (text >0) ) || --the rest
+            leftNum = parseFloat(text);
+            operator = input;
+            upDisplay.textContent += input; 
+            text = "0"
+            rightNum = 0;
+            return;
+        }
+
+    }
+    if ((rightNum == 0)) {
+
+        if ((input != "x") && (input != "+") && (input != "/")) {
+            upDisplay.textContent += input ;
+            text = (text *  10) + parseFloat(input);
+        }
+        else if ((input == "x") || (input == "+") || (input == "/")){ //  ((input == "-" ) && (text >0) ) || --the rest
+            rightNum = parseFloat(text);
+            result = operate(operator, leftNum, rightNum)
+            leftNum = result;
+            operator = input;
+            rightNum = 0;
+            upDisplay.textContent += input; 
+            text = "0"
+        }
+
+    }
+
+
+    // else {
+    //     if ((input == "x") || (input == "+") || (input == "/") || (input == "-")){
+    //         leftNum = parseFloat(text);
+    //         operator = input;
+    //         upDisplay.textContent += input; 
+    //         text = "0"
+    //     }
+    //     else{
+    //         upDisplay.textContent += input; 
+    //     }
+            
+    // }
+
+
+   
 }
 
 
