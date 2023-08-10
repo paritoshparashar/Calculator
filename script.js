@@ -113,18 +113,14 @@ function mod (a, b){
 
 //Below is the implementation to populate the display when the buttons are pressed
 
-const display = document.querySelector('.display');
-display.textContent = "";
-display.style.padding = "10px"
-display.style.color = "darkgreen";
-display.style.display = "flex";
-display.style.justifyContent = "end";
-display.style.alignItems = "end";
-display.style.fontSize = "30px";
-display.style.fontFamily = "'Courier New', Courier, monospace";
-display.style.fontWeight = "bold";
+const upDisplay = document.querySelector('.upDisplay');
+upDisplay.textContent = "";
 
 function dispPopNum () {
-    display.textContent += this.textContent ;
+    upDisplay.textContent += this.textContent ;
 }
+
+
+// let upDisplay = document.querySelector('.downDisplay');
+
 

@@ -41,8 +41,30 @@ header{
     background: rgb(27, 27, 27);
     border-radius: 10px;
     margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
     flex:1;
     box-shadow: inset 0px 3px 6px 3px rgba(0, 0, 0, 0.479);
+}
+
+.upDisplay{
+    height:35px;
+    background: rgb(27, 27, 27);
+    border-radius: 10px;
+    padding : 10px;
+    color : darkgreen;
+    display : flex;
+    justify-content : end;
+    align-items : end;
+    font-size : 30px;
+    font-family : 'Courier New', Courier, monospace;
+    font-weight : bold;
+}
+
+.downDisplay{
+    height: 35px;
+    background: rgb(27, 27, 27);
+    border-radius: 10px;
 }
 
 .erase{
