@@ -77,6 +77,7 @@ for (let i = 1; i < 20 ; i++) {
 //Implementing Calculator From here
 
 let leftNum = 0;
+let sign = 1;
 let rightNum = 1;
 let result = 0;
 var operator;
@@ -121,9 +122,9 @@ function mod (a, b){
 
 const upDisplay = document.querySelector('.upDisplay');
 upDisplay.textContent = "0";
+
 let text = 0;
 let previousInput = undefined;
-
 
 
 function dispPopNum () {
@@ -131,11 +132,12 @@ function dispPopNum () {
     
     let input = this.textContent;
 
-    if ((input == "x") || (input == "+") || (input == "/")) {
+    if ((input == "x") || (input == "+") || (input == "/") || (previousInput == "-")) {
 
         if (previousInput == input) {
             return;
         }
+        //else
 
     }
     previousInput = input;
@@ -154,13 +156,17 @@ function dispPopNum () {
 
     if ((leftNum == 0)) {
 
-        if ((input != "x") && (input != "+") && (input != "/")) {
+        if (((input != "x") && (input != "+") && (input != "/") && (input != "-")) || ( (input == "-") && (text == 0))) {
+
+            if (input == "-" && text == 0)  {
+                sign = -1;
+            }
             upDisplay.textContent += input ;
             text = (text *  10) + parseFloat(input);
             return;
         }
-        else if ((input == "x") || (input == "+") || (input == "/")){ //  ((input == "-" ) && (text >0) ) || --the rest
-            leftNum = parseFloat(text);
+        else if ((input == "x") || (input == "+") || (input == "/") || (input == "-")){ 
+            leftNum = sign * parseFloat(text);
             operator = input;
             upDisplay.textContent += input; 
             text = "0"
@@ -171,12 +177,18 @@ function dispPopNum () {
     }
     if ((rightNum == 0)) {
 
-        if ((input != "x") && (input != "+") && (input != "/") && (input != "=")) {
+        if (((input != "x") && (input != "+") && (input != "/") && (input != "=") && (input !="-")) || ( (input == "-") && (text == 0))) {
+
+            if (input == "-" && text == 0)  {
+                sign = -1;
+            }
             upDisplay.textContent += input ;
             text = (text *  10) + parseFloat(input);
+
         }
-        else if ((input == "x") || (input == "+") || (input == "/") || (input == "=")){ //  ((input == "-" ) && (text >0) ) || --the rest
-            rightNum = parseFloat(text);
+        else if ((input == "x") || (input == "+") || (input == "/") || (input == "=") || (input == "-")){
+
+            rightNum = sign * parseFloat(text);
             result = operate(operator, leftNum, rightNum);
             dispResult(result);
             leftNum = result;
@@ -186,7 +198,7 @@ function dispPopNum () {
                 upDisplay.textContent += input;
             }
             
-            text = "0"
+            text = "0";
         }
 
     }
@@ -199,6 +211,7 @@ function dispPopNum () {
         previousInput = undefined;
         result = 0;
         upDisplay.textContent = "0"
+        downDisplay.textContent ="";
     }
 
 
