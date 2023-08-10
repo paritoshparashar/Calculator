@@ -54,7 +54,7 @@ for (let i = 1; i < 20 ; i++) {
     }
     else if (i == 1) {
         number.textContent = "AC";
-        number.addEventListener('click', ()=> upDisplay.textContent = "0")
+        number.addEventListener('click' , clear);
     }
     else if (i == 2) {
         number.textContent = "C";
@@ -183,6 +183,8 @@ function dispPopNum () {
 
     }
 
+   
+
 
     // else {
     //     if ((input == "x") || (input == "+") || (input == "/") || (input == "-")){
@@ -200,7 +202,14 @@ function dispPopNum () {
 
    
 }
-
+ function clear (){
+        rightNum = 0;
+        leftNum = 0;
+        text = 0;
+        previousInput = undefined;
+        result = 0;
+        upDisplay.textContent = "0"
+    }
 
 // let upDisplay = document.querySelector('.downDisplay');
 
