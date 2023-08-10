@@ -40,6 +40,8 @@ for (let i = 1; i < 20 ; i++) {
         }
         else if (i == 12) {
             number.textContent = "-";
+            number.style.fontSize = "45px";
+            number.style.fontWeight = "100";
         }
         else if (i == 16) {
             number.textContent = "+";
