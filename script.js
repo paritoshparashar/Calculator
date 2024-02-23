@@ -18,9 +18,9 @@ for (let i = 1; i < 20 ; i++) {
 
         if (i%4 != 0) {     
         number.textContent = ''+ j;
-        
         --j;
         }
+        
         else if (i == 4) {
         number.textContent = "/";
         }
