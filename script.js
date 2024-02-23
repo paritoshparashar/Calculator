@@ -10,19 +10,7 @@ for (let i = 1; i < 20 ; i++) {
     number.id = 'boxed';
     number.className = ''+(i);
     number.style.width = (parentWidthtNumbers-30)/4 + 'px';
-    number.style.height =( parentWidthtNumbers-30)/4 + 'px';
-    number.style.backgroundColor = "black";
-    number.style.marginTop = '10px';
-    number.style.borderRadius = "50%";
-    number.style.color = "white";
-    number.style.display = "flex";
-    number.style.justifyContent = "center";
-    number.style.alignItems = "center";
-    number.style.fontSize = "25px";
-    number.style.fontWeight = "bold";
-    number.style.fontFamily = "'Courier New', Courier, monospace";
-    number.style.boxShadow = "5px 5px 7px rgba(0, 0, 0, 0.57)"
-    
+    number.style.height =( parentWidthtNumbers-30)/4 + 'px';    
 
     if (i >=4 && i<=17 ) {
 
